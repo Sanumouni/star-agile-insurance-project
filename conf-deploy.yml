@@ -1,0 +1,19 @@
+---
+- name: Configure Docker on Other server
+  hosts: [server]
+  become: true
+  tasks:
+  - name: apt update
+    command: sudo apt update
+  - name: Install the Python using Pip
+    command: sudo apt install -y python-pip
+  - name: Installing Docker
+    command: sudo apt-get install -y docker.io
+    become: yes
+    become_user: root
+  - name: start docker service using systemctl
+    command: sudo systemctl start docker
+    become: yes
+    become_user: root
+  - name: Deploy the Image from DockerHub and Run as Container
+    command: docker run -itd -p 8080:8081 mouni1arjun/insure-project:latest
