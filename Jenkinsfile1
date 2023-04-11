@@ -24,6 +24,10 @@ pipeline {
       publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/project1', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
                           }
            }
-
+    stage('Image creation') {
+      steps {
+        sh 'docker build -t mouni1arjun/insure-project:latest .'
+                    }
+            }
 }
 }
