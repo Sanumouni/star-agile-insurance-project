@@ -12,5 +12,11 @@ pipeline {
         git 'https://github.com/Sanumouni/star-agile-insurance-project.git'
             }
     }
+    stage('Package and Build App') {
+     steps {
+       echo 'Build and Package App'
+       sh 'mvn clean package'
+           }
     }
-    }
+}
+}
