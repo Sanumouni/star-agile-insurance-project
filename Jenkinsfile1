@@ -35,7 +35,12 @@ pipeline {
         sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
                        } 
             }
-      }   
+      }
+    stage('Push Image to Docker Registry') {
+      steps {
+        sh 'docker push mouni1arjun/insure-project:latest'
+            }
+    }   
 
 }
 }
