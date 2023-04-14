@@ -48,7 +48,7 @@ pipeline {
     }   
     stage('Execute Selenium Test') {
       steps {
-        sh 'java -jar selenium-insure-me-runnable.jar'
+        sh 'java -jar Javaselenium.jar'
             }
     }   
 
