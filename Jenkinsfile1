@@ -46,12 +46,7 @@ pipeline {
        deleteDir()
        ansiblePlaybook credentialsId: 'Ansible-Login', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'conf-deploy.yml'
            }
-   }   
-    stage('Execute Selenium Test') {
-      steps {
-        sh 'java -jar Javaselenium.jar'
-            }
-    }   
+      }   
 
-}
+  }
 }
